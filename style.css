@@ -33,8 +33,18 @@ nav {
 
 .navbar-brand {
     display: flex;
-    justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+nav>#navbarSupportedContent {
+    width: 60%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .line {
@@ -44,7 +54,7 @@ nav {
 }
 
 .Announcement {
-    color: var(--WHITE);
+    color: white;
     width: 100%;
     height: 30px;
     text-align: center;
@@ -55,30 +65,36 @@ nav {
     margin-top: 60px;
     height: 783px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
     align-items: center;
     background: #fff;
+    background-position: 60% 43%;
+    background-repeat: no-repeat;
+    background-size: 7%;
 }
 
 .Hero-Left {
-    margin-top: -30px !important;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 35px;
-    z-index: 1;
+    justify-content: center;
+    width: 60%;
+    padding: 15px;
 }
 
-.Hero-Left>h1 {
-    font-size: 3.5rem;
+.hero-heading {
+    font-size: 2.5rem;
 }
 
-.Hero-Left>p {
-    color: var(--textlabelcolorscharcoal, #595959);
+.hero-sub {
+    color: #595959;
     font-size: 14px;
     line-height: 130%;
-
     letter-spacing: 0.36px;
+    width: 75%;
+    margin-top: 20px;
 }
 
 .arrow {
@@ -105,7 +121,6 @@ nav {
     height: 47px;
     align-items: center;
     gap: 10.214px;
-
     border-radius: 13.619px;
     padding: auto;
 }
@@ -127,7 +142,7 @@ nav {
 }
 
 .feature-block-text>h6 {
-    color: var(--Gray-2, #4f4f4f);
+    color: #4f4f4f;
     font-size: 12px;
     letter-spacing: 0.12px;
 }
@@ -140,12 +155,9 @@ nav {
     flex-direction: column;
     width: 415px;
     height: 496px;
-
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px 10px rgba(253, 127, 127, 0.3),
-        0px 0px 30px 2px rgba(255, 247, 254, 0.3),
-        -5px -5px 30px 2px rgb(192, 192, 233), -5px -5px 30px 2px rgb(228, 228, 248);
+    box-shadow: 4px 6px 18px #888888;
 }
 
 .CTA-form>h2 {
@@ -167,7 +179,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 366px;
+    width: 330px;
     padding: 14px 6px 14px 10px;
     gap: 10px;
     border-radius: 8px;
@@ -189,7 +201,7 @@ nav {
 }
 
 .input-field>button {
-    color: var(--WHITE);
+    color: white;
     border: none;
     display: flex;
     width: 367px;
@@ -686,17 +698,14 @@ footer {
         flex-direction: column;
     }
 
-    .Hero-Left>h1 {
+    .Hero-Left>.hero-heading {
+        font-size: 2rem;
+    }
+
+    .Hero-Left>.hero-sub {
+        margin-top: 10px;
         font-size: 1rem;
-    }
-
-    .Hero-Left>h1>span {
-        font-size: 1.3rem;
-    }
-
-    .Hero-Left>p {
-        margin-top: -30px;
-        font-size: 0.5rem;
+        text-align: center;
     }
 
     .features {
@@ -747,10 +756,7 @@ footer {
         height: auto;
         padding: 5px;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px 10px rgba(253, 127, 127, 0.3),
-            0px 0px 10px 2px rgba(255, 247, 254, 0.3),
-            -5px -5px 10px 2px rgb(192, 192, 233),
-            -5px -5px 10px 2px rgb(228, 228, 248);
+        box-shadow: 4px 5px 18px #5d5b5b;
     }
 
     .CTA-form>h2 {
@@ -938,5 +944,66 @@ footer {
 
     .testimonial>p {
         font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Announcement {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    #hero-section,
+    .Hero-Left {
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Hero-Left>.hero-sub {
+        width: 100%;
+    }
+
+    .features {
+        width: max-content;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 8px;
+    }
+
+    .CTA-form {
+        width: 90%;
+        height: 496px;
+        box-shadow: 4px 5px 18px #5d5b5b;
+    }
+
+    #name,
+    #tel {
+        border: none;
+        width: 60vw;
+        height: 50%;
+        background: #fafafa;
+    }
+
+    #companies {
+        width: 100%;
+    }
+
+    .companies-title {
+        font-weight: 100;
+    }
+
+    .input-field{
+        height: 50px;
+        margin-top: 30px;
+        border: none;
     }
 }
